@@ -19,12 +19,12 @@
             <div class="d-flex col-md-12">
                 <div class="col-3 mt-3">
                     <img src="{{ asset('images/logo.png') }}" style="width: 35%;" alt="Bassem_logo Logo">
-                    <p>L'Immobilier qui rassure !</p>
                 </div>
                 <div class="col-9">
-                    <h1 class="text-center p-2" style="font-size: 25px;">
-                        <strong>AGENCE IMMOBILIER BASSEM-YAM</strong>
+                    <h1 class="text-center" style="font-size: 25px;">
+                        <strong>AGENCE IMMOBILIERE BASSEM-YAM</strong>
                     </h1>
+                    <h6 class="text-center">LOCATION - ACHAT - VENTE - GESTION IMMOBILIERE</h6>
                     <h5>Située à Ouagadougou secteur 28 (Coté Est de la pédiatrie Charles de Gaule)</h5>
                 </div>
             </div>
@@ -35,7 +35,7 @@
         <div class="d-flex justify-content-end">
             <h5>Ouagadougou, le {{ date('d-m-Y') }}</h5>
         </div>
-        <section class="m-5">
+        <section class="mt-2 mb-2">
             <h3 class="mb-3">Paiement N° : {{ $finds->code }}</h3>
             <h4>Doit : {{ $finds->Location->Locataire->nom }} {{ $finds->Location->Locataire->prenom }}</h4>
         </section>
@@ -45,25 +45,22 @@
                     <th class="text-center">Identifiant</th>
                     <th class="text-center">Désignation</th>
                     <th class="text-center">Période</th>
-                    <th class="text-center">Montant relgé</th>
+                    <th class="text-center">Montant</th>
                 </tr>
                 <tr>
-                    <td height="100">{{ $finds->code }}</td>
+                    <td height="100">{{ $finds->Location->Locataire->code }}</td>
                     <td>
-                        <p>Pour le paiement du loyer de mois de
-                            <span style="font-style: italic; font-weight: bold;">{{ $finds->periode }}
-                                {{ $finds->annee }}</span>
-                        </p>
+                        <p>Pour le paiement du loyer de mois de...</p>
                     </td>
                     <td class="text-center">{{ $finds->periode }} {{ $finds->annee }}</td>
                     <td class="text-center">{{ $finds->montant }} FCFA</td>
                 </tr>
             </table>
             <div class="row m-1">
-                <div class="col-9 p-3 bg-secondary">
+                <div class="col-9">
                     <h4 class="text-light"><strong>TOTAL</strong></h4>
                 </div>
-                <div class="col-3 p-3 bg-danger">
+                <div class="col-3">
                     <h4 class="text-light"><strong>{{ $finds->montant }} FCFA</strong></h4>
                 </div>
             </div>

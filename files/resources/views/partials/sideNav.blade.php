@@ -42,7 +42,8 @@
                     </a>
                     <div class="collapse" id="pagesCollapseErrorST" data-bs-parent="#accordionSidenavPagesMenu">
                         <nav class="sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{ route('Gestion_depense_courant.index') }}">Dépenses courante</a>
+                            <a class="nav-link" href="{{ route('Gestion_depense_courant.index') }}">Dépenses
+                                courante</a>
                             <a class="nav-link" href="{{ route('depense_bailleur') }}">Dépenses bailleur</a>
                             <a class="nav-link" href="{{ route('depense_locataire') }}">Dépenses locataire</a>
                             <a class="nav-link" href="">Etat des dépenses</a>
@@ -59,8 +60,10 @@
                         <div class="collapse" id="collapsePages3" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                                 <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                <a class="nav-link collapsed" href="{{ route('Gestion_immeuble.index') }}">Gestion Immeubles</a>
-                                <a class="nav-link collapsed" href="{{ route('Gestion_maisons.index') }}">Gestion maisons</a>
+                                <a class="nav-link collapsed" href="{{ route('Gestion_immeuble.index') }}">Gestion
+                                    Immeubles</a>
+                                <a class="nav-link collapsed" href="{{ route('Gestion_maisons.index') }}">Gestion
+                                    maisons</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
@@ -72,18 +75,35 @@
                         <div class="collapse" id="collapsePages34" data-bs-parent="#accordionSidenav">
                             <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
                                 <!-- Nested Sidenav Accordion (Pages -> Account)-->
-                                <a class="nav-link collapsed" href="{{ route('Gestion_bailleurs.index') }}">Liste des bailleurs</a>
-                                <a class="nav-link collapsed" href="{{ route('Gestion_contrat_bailleur.index') }}">Contrats bailleur</a>
+                                <a class="nav-link collapsed" href="{{ route('Gestion_bailleurs.index') }}">Liste des
+                                    bailleurs</a>
+                                <a class="nav-link collapsed"
+                                    href="{{ route('Gestion_contrat_bailleur.index') }}">Contrats bailleur</a>
                                 <a class="nav-link collapsed" href="#!">Retraits bailleur</a>
                             </nav>
                         </div>
                     @endif
 
                     @if (Auth::user()->role == 'Privilege')
-                        <a class="nav-link collapsed" href="{{ route('Gestion_utilisateur.create') }}">
+                        <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse"
+                            data-bs-target="#collapsePages345" aria-expanded="false" aria-controls="collapsePages">
                             <div class="nav-link-icon"><i data-feather="users"></i></div>
-                            Créer un compte
+                            Administration
+                            <div class="sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        <div class="collapse" id="collapsePages345" data-bs-parent="#accordionSidenav">
+                            <nav class="sidenav-menu-nested nav accordion" id="accordionSidenavPagesMenu">
+                                <!-- Nested Sidenav Accordion (Pages -> Account)-->
+                                <a class="nav-link collapsed" href="{{ route('Gestion_utilisateur.create') }}">
+                                    <div class="nav-link-icon"><i data-feather="users"></i></div>
+                                    Gestions des salaires
+                                </a>
+                                <a class="nav-link collapsed" href="{{ route('Gestion_utilisateur.create') }}">
+                                    <div class="nav-link-icon"><i data-feather="users"></i></div>
+                                    Créer un compte
+                                </a>
+                            </nav>
+                        </div>
                     @endif
                 </div>
             </div>

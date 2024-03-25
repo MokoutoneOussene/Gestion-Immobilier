@@ -59,7 +59,7 @@ class DepenseController extends Controller
         $depenses = Depense::whereDate('date', '>=', $date_debut)->whereDate('date', '<=', $date_fin)->get();
         $total = $depenses->sum('montant');
 
-        return view('pages.depenses.depense', compact('depenses', 'total'));
+        return view('pages.depenses.depense_courant', compact('depenses', 'total'));
     }
 
     /**

@@ -85,7 +85,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div
-                        style="background: linear-gradient(90deg, rgb(164, 216, 231) 0%, rgb(198, 233, 175) 100%); border-radius: 5px;">>
+                        style="background: linear-gradient(90deg, rgb(164, 216, 231) 0%, rgb(198, 233, 175) 100%); border-radius: 5px;">
                             <form action="{{ route('filter_dep_bailleur') }}" method="GET">
                                 <div class="d-flex justify-content-end mb-3">
                                     <div class="col-3 m-2">
