@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Bailleur;
+use App\Models\ContratBailleur;
 use Illuminate\Http\Request;
 
 class BailleurController extends Controller
@@ -42,7 +43,20 @@ class BailleurController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $finds = Bailleur::find($id);
+        $contrat_bailleur = ContratBailleur::where('bailleurs_id', '=', $id)->get();
+
+        return view('pages.bailleurs.show', compact('finds', 'contrat_bailleur'));
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function contrat_bailleur(string $id)
+    {
+        $finds = ContratBailleur::find($id);
+
+        return view('pages.bailleurs.contrat', compact('finds'));
     }
 
     /**

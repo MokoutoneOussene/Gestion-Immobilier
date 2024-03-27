@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bailleur;
 use App\Models\Encaissement;
 use App\Models\Location;
 use Illuminate\Http\Request;
@@ -19,6 +20,18 @@ class EncaissementController extends Controller
 
         $total = $encaissements->sum('montant');
         return view('pages.encaissements.encaissement', compact('encaissements', 'locations', 'total'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     */
+    public function etat_general()
+    {
+        $encaissements = Encaissement::latest()->get();
+        $locations = Location::latest()->get();
+        $bailleurs = Bailleur::latest()->get();
+
+        return view('pages.encaissements.etat_general', compact('encaissements', 'locations', 'bailleurs'));
     }
 
     /**

@@ -90,11 +90,12 @@
     });
 </script>
 
-<script>
+{{-- <script>
     $(document).ready(function() {
     $('.js-example-basic-multiple').select2();
 });
-</script>
+</script> --}}
+
 <sb-customizer project="sb-admin-pro"></sb-customizer>
 
 <x-notify::notify />

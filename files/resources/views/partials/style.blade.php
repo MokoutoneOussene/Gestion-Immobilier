@@ -12,6 +12,7 @@
 		display: none;
 	}
 </style>
+
 <script data-search-pseudo-elements="" defer="" src="{{ asset('cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js') }}" crossorigin="anonymous"></script>
 <script src="{{ asset('cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js') }}" crossorigin="anonymous"></script>
 {{-- <script src="{{ asset('js/jquery-3.5.1.js') }}"></script> --}}

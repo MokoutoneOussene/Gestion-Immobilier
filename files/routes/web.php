@@ -39,6 +39,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('Contrat/gestion_contrat/{id}', [LocataireController::class, 'contrat']);
 
     Route::resource('Gestion_bailleurs', BailleurController::class);
+    Route::get('Contrat/contrat_bailleur/{id}', [BailleurController::class, 'contrat_bailleur']);
+
     Route::resource('Gestion_immeuble', ImmeubleController::class);
 
     Route::resource('Gestion_location', LocationController::class);
@@ -49,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('Gestion_encaissements', EncaissementController::class);
     Route::get('Filter/date_filter', [EncaissementController::class, 'date_filter'])->name('date_filter');
     Route::get('Impression/print_encaissement/{id}', [EncaissementController::class, 'print']);
+    Route::get('Etat-general/encaissement', [EncaissementController::class, 'etat_general'])->name('etat_general');
 
     Route::resource('Gestion_contrat_bailleur', ContratBailleurController::class);
 

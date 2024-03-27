@@ -72,29 +72,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <div class="col-lg-6 col-md-12">
-                                            <h5 class="text-danger mb-3">Information sur le bailleur</h5>
-                                            <div class="mr-5">
-                                                <p>Nom : <strong>OUEDRAOGO</strong></p>
-                                            </div>
-                                            <div class="mr-5">
-                                                <p>Prenom : <strong>OUSSENI</strong></p>
-                                            </div>
-                                            <div class="mr-5">
-                                                <p>Telephone : <strong>67186063</strong></p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-12">
-                                            <h5 class="text-danger mb-3">Information sur l'immeuble</h5>
-                                            <div class="mr-5">
-                                                <p>Adresse : <strong>Yonko 1</strong></p>
-                                            </div>
-                                            <div class="mr-5">
-                                                <p>Nbr locaux : <strong>6</strong></p>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="mt-3">
                                     <button type="submit" class="btn btn-success">Enregistrer</button>

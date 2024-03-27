@@ -15,7 +15,7 @@
                                 data-bs-target="#formUserBackdrop">
                                 Ajouter un nouveau bailleur
                             </a>
-                        </div>
+                        </div> 
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">

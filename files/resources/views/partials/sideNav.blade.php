@@ -29,8 +29,8 @@
                     <div class="collapse" id="pagesCollapseError2" data-bs-parent="#accordionSidenavPagesMenu">
                         <nav class="sidenav-menu-nested nav">
                             <a class="nav-link" href="{{ route('Gestion_encaissements.index') }}">Gestion des
-                                paiements</a>
-                            <a class="nav-link" href="">Etat général paiement</a>
+                                encaissements</a>
+                            <a class="nav-link" href="{{ route('etat_general') }}">Etat général encaissements</a>
                             <a class="nav-link" href="">Logs</a>
                         </nav>
                     </div>

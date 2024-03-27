@@ -37,14 +37,16 @@
                         <div class="sbp-preview-content">
                             <form method="POST" action="{{ route('store_depense_locataire') }}">
                                 @csrf
-                                <input type="text" name="users_id" class="form-control" value="{{ Auth::user()->id }}" hidden>
+                                <input type="text" name="users_id" class="form-control" value="{{ Auth::user()->id }}"
+                                    hidden>
                                 <div class="row mt-3">
                                     <div class="col-lg-4 col-md-12">
                                         <div class="mb-3">
                                             <label>Locataire concerné</label>
-                                            <select name="locataires_id" class="form-control">
+                                            <select name="locataires_id" class="form-control js-example-basic-single">
                                                 @foreach ($locataires as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->code }} - {{ $item->nom }} {{ $item->prenom }}</option>
+                                                    <option value="{{ $item->id }}">{{ $item->code }} -
+                                                        {{ $item->nom }} {{ $item->prenom }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -122,7 +124,8 @@
                                         <td>{{ $item->montant }} FCFA</td>
                                         <td>{{ $item->motif }}</td>
                                         <td class="text-center">
-                                            <a class="text-center" href="{{ route('Gestion_depense_courant.show', [$item->id]) }}">
+                                            <a class="text-center"
+                                                href="{{ route('Gestion_depense_courant.show', [$item->id]) }}">
                                                 <i class="me-2 text-green" data-feather="eye"></i>
                                             </a>
                                         </td>
@@ -143,4 +146,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.js-example-basic-single').select2();
+        });
+    </script>
 @endsection
