@@ -22,8 +22,9 @@
                     <div class="card-body">
                         <h2 class="text-center mb-3">Etat général des paiement</h2>
                         <table class="table table-bordered table-responsive">
+                            @foreach ($bailleurs as $baill)
                             <tr>
-                                <th>KABORE ABDOUL RAZAK</th>
+                                <th>{{ $baill->nom }}</th>
                                 <td>
                                     <tr class="text-center">
                                         <th></th>
@@ -35,16 +36,18 @@
                                         <th>Année</th>
                                         <th>Retard</th>
                                     </tr>
+                                    @foreach ($encaissement as $item)
                                     <tr class="text-center">
                                         <td></td>
-                                        <td>LC-0034</td>
-                                        <td>OUEDRAOGO Ousseni</td>
-                                        <td>76908722</td>
-                                        <td>80000</td>
-                                        <td>Mars</td>
-                                        <td>2024</td>
+                                        <td>{{ $item->Location->code }}</td>
+                                        <td>{{ $item->Location->Locataire->nom }}</td>
+                                        <td>{{ $item->Location->Locataire->telephone }}</td>
+                                        <td>{{ $item->Location->Maison->loyer }}</td>
+                                        <td>{{ $item->periode }}</td>
+                                        <td>{{ $item->annee }}</td>
                                         <td>0 Mois</td>
                                     </tr>
+                                    @endforeach
                                 </td>
                                 <td colspan="8">
                                     <div class="row">
@@ -57,6 +60,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            @endforeach
                         </table>
                     </div>
                 </div>

@@ -41,7 +41,7 @@ class LocataireController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, string $id)
+    public function show(string $id)
     {
         $finds = Locataire::find($id);
         $locations = Location::where('locataires_id', '=', $finds->id)->get('id');

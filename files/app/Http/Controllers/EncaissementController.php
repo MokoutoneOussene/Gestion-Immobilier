@@ -27,11 +27,10 @@ class EncaissementController extends Controller
      */
     public function etat_general()
     {
-        $encaissements = Encaissement::latest()->get();
-        $locations = Location::latest()->get();
         $bailleurs = Bailleur::latest()->get();
+        $encaissement = Encaissement::latest()->get();
 
-        return view('pages.encaissements.etat_general', compact('encaissements', 'locations', 'bailleurs'));
+        return view('pages.encaissements.etat_general', compact('encaissement', 'bailleurs'));
     }
 
     /**
