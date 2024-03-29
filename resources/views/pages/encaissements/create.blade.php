@@ -55,6 +55,7 @@
                                                             <div class="mb-3">
                                                                 <label>Code location & nom locataire</label>
                                                                 <select name="locations_id" class="form-control" id="locationSelect">
+                                                                    <option value="">Selectionner un locataire</option>
                                                                     @foreach ($locations as $item)
                                                                         <option value="{{ $item->id }}"
                                                                             data-nom="{{ $item->Locataire->nom }}"

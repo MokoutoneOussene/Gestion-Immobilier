@@ -20,4 +20,8 @@ class Immeuble extends Model
     function ContratBailleur() {
         return $this->hasMany(ContratBailleur::class);
     }
+
+    function maisons() {
+        return $this->hasMany(Maison::class, 'immeubles_id', 'id');
+    }
 }

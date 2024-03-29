@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Bailleur;
 use App\Models\Encaissement;
+use App\Models\Immeuble;
 use App\Models\Location;
 use Illuminate\Http\Request;
 
@@ -27,10 +28,15 @@ class EncaissementController extends Controller
      */
     public function etat_general()
     {
-        $bailleurs = Bailleur::latest()->get();
-        $encaissement = Encaissement::latest()->get();
+        $bailleursId = Bailleur::latest()->pluck('id');
+    $immeubles = Immeuble::latest()->with('maisons.location')->whereIn('bailleurs_id', $bailleursId)->get();
 
-        return view('pages.encaissements.etat_general', compact('encaissement', 'bailleurs'));
+    // // Charger les locations pour chaque maison de chaque immeuble
+    $immeubles->each(function ($immeuble) {
+        $immeuble->maisons->load('location.Encaissement');
+    });
+        // dd($immeubles);
+        return view('pages.encaissements.etat_general', compact('immeubles'));
     }
 
     /**

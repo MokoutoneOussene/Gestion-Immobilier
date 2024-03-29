@@ -13,11 +13,15 @@ class Maison extends Model
 
     ];
 
-    function Location() {
-        return $this->hasOne(Location::class);
-    }
+    // function Location() {
+    //     return $this->hasOne(Location::class);
+    // }
 
     function Immeuble() {
         return $this->belongsTo(Immeuble::class, 'immeubles_id');
+    }
+    
+    function location() {
+        return $this->hasOne(Location::class, 'maisons_id');
     }
 }
