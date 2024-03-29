@@ -37,7 +37,7 @@
                                     <th>Retard</th>
                                 </tr>
                                 @foreach ($immeuble->maisons as $item)
-                                        @forelse ($item->location->Encaissement ?? [] as $encaissement)
+                                        @foreach ($item->location->Encaissement ?? [] as $encaissement)
                                             <tr class="text-center">
                                                 <td></td>
                                                 <td>{{ $encaissement->code }}</td>
@@ -48,9 +48,7 @@
                                                 <td>{{ $encaissement->annee }}</td>
                                                 <td>0 Mois</td>
                                             </tr>
-                                        @empty
-                                            <p>Aucun encaissement pour ce bailleur</p>
-                                        @endforelse
+                                        @endforeach
                                 @endforeach
                                 </td>
                                 <td colspan="8">

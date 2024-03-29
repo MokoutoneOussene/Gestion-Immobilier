@@ -29,7 +29,7 @@
     <!-- Main page content-->
     <div class="container-xl px-4 mt-n10">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-8">
                 <!-- Tabbed dashboard card example-->
                 <div class="card mb-4">
                     <div class="card-body">
@@ -65,15 +65,27 @@
                                         <td>{{ $finds->annee }}</td>
                                     </tr>
                                 </table>
-                                <div class="row no-print">
-                                    <div class="col-12">
-                                        <a href="{{ url('Impression/print_encaissement/' . $finds->id) }}" type="button" class="btn btn-success"><i class="fas fa-print" style="margin-right: 5px;"></i>
-                                            Imprimer ou Générer un pdf
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card mb-4">
+                    <div class="card-header">Plus d'actions</div>
+                    <div class="list-group list-group-flush small">
+                        <a class="list-group-item list-group-item-action" href="{{ url('Impression/print_encaissement/' . $finds->id) }}">
+                            <i class="fas fa-print fa-fw text-success me-2"></i>
+                            Imprimer l'encaissement
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="{{ route('Gestion_encaissements.edit', [$finds->id]) }}">
+                            <i class="fas fa-edit fa-fw text-warning me-2"></i>
+                            Modifier l'encaissement
+                        </a>
+                        <a class="list-group-item list-group-item-action" href="{{ url('delete_encaissement/' . $finds->id) }}">
+                            <i class="fas fa-close fa-fw text-danger me-2"></i>
+                            Supprimer l'encaissement
+                        </a>
                     </div>
                 </div>
             </div>

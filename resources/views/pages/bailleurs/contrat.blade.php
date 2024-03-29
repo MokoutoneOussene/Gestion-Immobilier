@@ -50,19 +50,17 @@
         </p>
         <p class="mt-3"><strong>D'autre part,</strong></p>
         <p>
-            DIALLO Habibata, née le 01/09/1980 à Mogtedo, Adjointe des Services Financiers,
-            demeurant à Saaba département du Kadiogo, titulaire de la CNIB N°B8646523 délivrée
-            le 01/09/2016 par l'Office Nationale d'Identification (ONI) Province du Kadiogo.
+            {{ $finds->Bailleur->nom }} {{ $finds->Bailleur->prenom }}, née le {{ $finds->Bailleur->date_naissance }} à {{ $finds->Bailleur->lieu }}, {{ $finds->Bailleur->profession }},
+            demeurant à {{ $finds->Bailleur->quartier }}, titulaire de la CNIB N°{{ $finds->Bailleur->cnib }} délivrée
+            le {{ $finds->Bailleur->date_deliv }} par l'Office Nationale d'Identification (ONI).
         </p>
-        <p>Tél: 78 44 70 19 / 76 69 70 92, dénommé le bailleur.</p>
+        <p>{{ $finds->Bailleur->telephone }}, dénommé le bailleur.</p>
         <p class="mt-3"><strong>Représentante :</strong></p>
         <p>
-            ZOURE Arzouma Médard, né le 29/05/1983 à Garango, Administrateur SCES
-            Financiers, demeurant à Ouagadougou au secteur 01, titulaire de la CNIB
-            N°B16677814 délivrée le 25/01/2022 par l'Office Nationale d'Identification
-            (ONI) Province du Kadiogo.
+            {{ $finds->Bailleur->prevent_name }}
         </p>
-        <p>Tếl : 70 16 69 32 / 78 10 70 17, dénommé le bailleur.</p>
+        <p>Tel : {{ $finds->Bailleur->prevent_phone }}</p>
+
         <p>Il a été convenu et arrêté ce qui suit :</p>
         <p class="mt-3"><strong>OBJET :</strong></p>
         <p>

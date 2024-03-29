@@ -15,10 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->string('prenom');
+            $table->date('date_naissance');
+            $table->string('lieu');
             $table->string('code')->unique()->nullable();
             $table->string('situation')->nullable();
             $table->string('cnib');
+            $table->date('date_deliv');
             $table->string('telephone');
+            $table->string('profession');
             $table->string('quartier');
             $table->string('prevent_name')->nullable();
             $table->string('prevent_phone')->nullable();

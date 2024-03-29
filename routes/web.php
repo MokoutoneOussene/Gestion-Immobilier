@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('Filter/date_filter', [EncaissementController::class, 'date_filter'])->name('date_filter');
     Route::get('Impression/print_encaissement/{id}', [EncaissementController::class, 'print']);
     Route::get('Etat-general/encaissement', [EncaissementController::class, 'etat_general'])->name('etat_general');
+    Route::get('delete_encaissement/{id}', [EncaissementController::class, 'destroy']);
 
     Route::resource('Gestion_contrat_bailleur', ContratBailleurController::class);
 

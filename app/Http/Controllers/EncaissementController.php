@@ -29,12 +29,13 @@ class EncaissementController extends Controller
     public function etat_general()
     {
         $bailleursId = Bailleur::latest()->pluck('id');
-    $immeubles = Immeuble::latest()->with('maisons.location')->whereIn('bailleurs_id', $bailleursId)->get();
+        $immeubles = Immeuble::latest()->with('maisons.location')->whereIn('bailleurs_id', $bailleursId)->get();
 
-    // // Charger les locations pour chaque maison de chaque immeuble
-    $immeubles->each(function ($immeuble) {
-        $immeuble->maisons->load('location.Encaissement');
-    });
+        // // Charger les locations pour chaque maison de chaque immeuble
+        $immeubles->each(function ($immeuble) {
+            $immeuble->maisons->load('location.Encaissement');
+        });
+
         // dd($immeubles);
         return view('pages.encaissements.etat_general', compact('immeubles'));
     }
@@ -111,7 +112,9 @@ class EncaissementController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $finds = Encaissement::find($id);
+
+        return view('pages.encaissements.edit', compact('finds'));
     }
 
     /**
@@ -119,7 +122,18 @@ class EncaissementController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $encaiss = Encaissement::find($id);
+        $encaiss->update([
+            'date_encaissement' => $request->date_encaissement,
+            'montant' => $request->montant,
+            'periode' => $request->periode,
+            'annee' => $request->annee,
+            'operation_terrain' => $request->operation_terrain ?? false,
+            'users_id' => $request->users_id,
+        ]);
+
+        emotify('success', ' Encaissement modifié avec success !');
+        return redirect()->route('Gestion_encaissements.index');
     }
 
     /**
@@ -127,6 +141,10 @@ class EncaissementController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $encaiss = Encaissement::find($id);
+        $encaiss->delete();
+
+        emotify('error', ' Encaissement supprimer avec success !');
+        return redirect()->route('Gestion_encaissements.index');
     }
 }
