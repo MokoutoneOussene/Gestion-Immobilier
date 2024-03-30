@@ -15,7 +15,7 @@
                                 data-bs-target="#formUserBackdrop">
                                 Ajouter un nouveau bailleur
                             </a>
-                        </div> 
+                        </div>
                     </div>
                     <div class="col-12 col-xl-auto mt-4">
                         <div class="input-group input-group-joined border-0" style="width: 16.5rem">
@@ -91,24 +91,48 @@
                                                 style="border: 2px solid rgb(242, 199, 174); border-radius: 5px;">
                                                 <h6 class="m-2 text-center text-danger">Information sur le bailleur</h6>
                                                 <div class="row">
-                                                    <div class="col-lg-6 col-md-12">
+                                                    <div class="col-lg-4 col-md-12">
                                                         <div class="mb-3">
                                                             <label>Nom <span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" name="nom" placeholder="Henry" required />
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6 col-md-12">
+                                                    <div class="col-lg-4 col-md-12">
                                                         <div class="mb-3">
                                                             <label>Prénom <span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" name="prenom" placeholder="Mitchel" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12">
+                                                        <div class="mb-3">
+                                                            <label>Date de naissance</label>
+                                                            <input class="form-control" type="date" name="date_naissance" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12">
+                                                        <div class="mb-3">
+                                                            <label>Lieu de naissance</label>
+                                                            <input class="form-control" type="text" name="lieu" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12">
+                                                        <div class="mb-3">
+                                                            <label>Profession</label>
+                                                            <input class="form-control" type="text" name="profession" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-12">
+                                                        <div class="mb-3">
+                                                            <label>N° CNIB ou Passport<span class="text-danger">*</span></label>
+                                                            <input class="form-control" type="text" name="cnib" placeholder="B13649564" required />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-4 col-md-12">
                                                         <div class="mb-3">
-                                                            <label>N° CNIB ou Passport<span class="text-danger">*</span></label>
-                                                            <input class="form-control" type="text" name="cnib" placeholder="B13649564" required />
+                                                            <label>Delivré le</label>
+                                                            <input class="form-control" type="date" name="date_deliv" required />
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-12">

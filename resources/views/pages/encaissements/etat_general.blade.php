@@ -37,7 +37,11 @@
                                     <th>Retard</th>
                                 </tr>
                                 @foreach ($immeuble->maisons as $item)
+<<<<<<< HEAD
                                         {{-- @forelse ($item->location->Encaissement ?? [] as $encaissement) --}}
+=======
+                                        @foreach ($item->location->Encaissement ?? [] as $encaissement)
+>>>>>>> 4350dc4dd4d50f733b0bd84e2d2367820afba2e0
                                             <tr class="text-center">
                                                 <td></td>
                                                 <td>{{ $item->location->Encaissement->code ?? '' }}</td>
@@ -48,9 +52,13 @@
                                                 <td>{{ $item->location->Encaissement->annee ?? ''  }}</td>
                                                 <td>0 Mois</td>
                                             </tr>
+<<<<<<< HEAD
                                         {{-- @empty
                                             <p>Aucun encaissement pour ce bailleur</p>
                                         @endforelse --}}
+=======
+                                        @endforeach
+>>>>>>> 4350dc4dd4d50f733b0bd84e2d2367820afba2e0
                                 @endforeach
                                 </td>
                                 <td colspan="8">
