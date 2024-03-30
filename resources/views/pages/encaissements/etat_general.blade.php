@@ -37,20 +37,20 @@
                                     <th>Retard</th>
                                 </tr>
                                 @foreach ($immeuble->maisons as $item)
-                                        @forelse ($item->location->Encaissement ?? [] as $encaissement)
+                                        {{-- @forelse ($item->location->Encaissement ?? [] as $encaissement) --}}
                                             <tr class="text-center">
                                                 <td></td>
-                                                <td>{{ $encaissement->code }}</td>
-                                                <td>{{ $encaissement->Location->Locataire->nom }}</td>
-                                                <td>{{ $encaissement->Location->Locataire->telephone }}</td>
-                                                <td>{{ $encaissement->Location->Maison->loyer }}</td>
-                                                <td>{{ $encaissement->periode }}</td>
-                                                <td>{{ $encaissement->annee }}</td>
+                                                <td>{{ $item->location->Encaissement->code ?? '' }}</td>
+                                                <td>{{ $item->location->Encaissement->Location->Locataire->nom ?? ''  }}</td>
+                                                <td>{{ $item->location->Encaissement->Location->Locataire->telephone ?? ''  }}</td>
+                                                <td>{{ $item->location->Encaissement->Location->Maison->loyer ?? '' }}</td>
+                                                <td>{{ $item->location->Encaissement->periode ?? ''  }}</td>
+                                                <td>{{ $item->location->Encaissement->annee ?? ''  }}</td>
                                                 <td>0 Mois</td>
                                             </tr>
-                                        @empty
+                                        {{-- @empty
                                             <p>Aucun encaissement pour ce bailleur</p>
-                                        @endforelse
+                                        @endforelse --}}
                                 @endforeach
                                 </td>
                                 <td colspan="8">
@@ -59,7 +59,7 @@
                                             <h4 class="text-light"><strong>TOTAL</strong></h4>
                                         </div>
                                         <div class="col-lg-3 col-md-6 p-3 bg-danger">
-                                            <h4 class="text-light"><strong>390000 FCFA</strong></h4>
+                                            <h4 class="text-light"><strong>{{ $immeuble->totalEncaissement }} FCFA</strong></h4>
                                         </div>
                                     </div>
                                 </td>

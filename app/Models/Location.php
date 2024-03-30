@@ -22,7 +22,7 @@ class Location extends Model
     }
 
     function Encaissement() {
-        return $this->hasMany(Encaissement::class, 'locations_id');
+        return $this->hasOne(Encaissement::class, 'locations_id')->latest();
     }
 
     function User() {
