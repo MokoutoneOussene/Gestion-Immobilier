@@ -49,46 +49,36 @@
                                                     value="{{ Auth::user()->id }}" hidden>
                                                 <div class="p-2 m-1"
                                                     style="border: 2px solid rgb(242, 199, 174); border-radius: 5px;">
-                                                    <h6 class="m-2 text-center text-danger">Information sur le locataire</h6>
+                                                    <h6 class="m-2 text-center text-danger">Information sur le locataire
+                                                    </h6>
                                                     <div class="row">
                                                         <div class="col-lg-12 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Code location & nom locataire</label>
-                                                                <select name="locations_id" class="form-control" id="locationSelect">
-                                                                    <option value="">Selectionner un locataire</option>
-                                                                    @foreach ($locations as $item)
-                                                                        <option value="{{ $item->id }}"
-                                                                            data-nom="{{ $item->Locataire->nom }}"
-                                                                            data-prenom="{{ $item->Locataire->prenom }}"
-                                                                            data-cnib="{{ $item->Locataire->cnib }}"
-                                                                            data-telephone="{{ $item->Locataire->telephone }}"
-                                                                            data-profession="{{ $item->Locataire->profession }}"
-                                                                            data-quartier="{{ $item->Locataire->quartier }}"
-                                                                            data-code="{{ $item->Maison->code }}"
-                                                                            data-adresse="{{ $item->Maison->adresse }}"
-                                                                            data-loyer="{{ $item->Maison->loyer }}">
-                                                                            {{ $item->code }} - {{ $item->Locataire->nom }} {{ $item->Locataire->prenom }}
-                                                                        </option>
-                                                                    @endforeach
-                                                                </select>
+                                                                <select name="locations_id"
+                                                                    class="form-control locaraireList js-example-basic-single"
+                                                                    id="locationSelect" required>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Nom</label>
-                                                                <input class="form-control" type="text" id="nom" readonly />
+                                                                <input class="form-control" type="text" id="nom"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Prénom</label>
-                                                                <input class="form-control" type="text" id="prenom" readonly />
+                                                                <input class="form-control" type="text" id="prenom"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>N° CNIB ou Passport</label>
-                                                                <input class="form-control" type="text" id="cnib" readonly />
+                                                                <input class="form-control" type="text" id="cnib"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -96,37 +86,43 @@
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Téléphone</label>
-                                                                <input class="form-control" type="text" id="telephone" readonly />
+                                                                <input class="form-control" type="text" id="telephone"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Profession</label>
-                                                                <input class="form-control" type="text" id="profession" readonly />
+                                                                <input class="form-control" type="text" id="profession"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Quartier</label>
-                                                                <input class="form-control" type="text" id="quartier" readonly />
+                                                                <input class="form-control" type="text" id="quartier"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Code maison</label>
-                                                                <input class="form-control" type="text" id="code" readonly />
+                                                                <input class="form-control" type="text" id="code"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Adresse maison</label>
-                                                                <input class="form-control" type="text" id="adresse" readonly />
+                                                                <input class="form-control" type="text" id="adresse"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">
                                                             <div class="mb-3">
                                                                 <label>Loyer maison</label>
-                                                                <input class="form-control" type="text" id="loyer" readonly />
+                                                                <input class="form-control" type="text" id="loyer"
+                                                                    readonly />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -201,20 +197,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('locationSelect').addEventListener('change', function() {
-            var selectedOption = this.options[this.selectedIndex];
-            document.getElementById('nom').value = selectedOption.getAttribute('data-nom');
-            document.getElementById('prenom').value = selectedOption.getAttribute('data-prenom');
-            document.getElementById('cnib').value = selectedOption.getAttribute('data-cnib');
-            document.getElementById('telephone').value = selectedOption.getAttribute('data-telephone');
-            document.getElementById('profession').value = selectedOption.getAttribute('data-profession');
-            document.getElementById('quartier').value = selectedOption.getAttribute('data-quartier');
-
-            document.getElementById('code').value = selectedOption.getAttribute('data-code');
-            document.getElementById('adresse').value = selectedOption.getAttribute('data-adresse');
-            document.getElementById('loyer').value = selectedOption.getAttribute('data-loyer');
-        });
-    </script>
 @endsection

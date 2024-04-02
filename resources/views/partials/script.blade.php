@@ -16,8 +16,8 @@
 <script src="{{ asset('js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('js/buttons.colvis.min.js') }}"></script>
 
-{{-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> --}}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 <script src="{{ asset('plugins/select2/js/select2.min.js') }}"></script>
@@ -100,3 +100,60 @@
 
 <x-notify::notify />
 @notifyJs
+
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2({
+        ajax: {
+            url: '/api/search-locataires',
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                return {
+                    q: params.term,
+                    page: params.page
+                };
+            },
+            processResults: function(data, params) {
+                params.page = params.page || 1;
+                return {
+                    results: $.map(data.items, function(item) {
+                        return {
+                            id: item.id,
+                            text: item.nom + ' ' + item.prenom,
+                            nom: item.nom,
+                            prenom: item.prenom,
+                            cnib: item.cnib,
+                            telephone: item.telephone,
+                            profession: item.profession,
+                            quartier: item.quartier,
+                            code: item.code,
+                            adresse: item.adresse,
+                            loyer: item.loyer
+                        };
+                    }),
+                    pagination: {
+                        more: (params.page * 30) < data.total_count
+                    }
+                };
+            },
+            cache: true
+        },
+        placeholder: 'Rechercher un locataire...',
+        minimumInputLength: 2,
+    }).on('select2:select', function (e) {
+        var data = e.params.data;
+        $('#nom').val(data.nom);
+        $('#prenom').val(data.prenom);
+        $('#cnib').val(data.cnib);
+        $('#telephone').val(data.telephone);
+        $('#profession').val(data.profession);
+        $('#quartier').val(data.quartier);
+        $('#code').val(data.code);
+        $('#adresse').val(data.adresse);
+        $('#loyer').val(data.loyer);
+    });
+});
+
+
+</script>

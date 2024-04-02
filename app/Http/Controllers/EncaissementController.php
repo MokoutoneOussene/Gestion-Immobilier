@@ -31,7 +31,6 @@ class EncaissementController extends Controller
         $bailleursId = Bailleur::latest()->pluck('id');
         $immeubles = Immeuble::latest()->with('maisons.location')->whereIn('bailleurs_id', $bailleursId)->get();
 
-<<<<<<< HEAD
         $immeubles->each(function ($immeuble) {
             $immeuble->maisons->load('location.Encaissement');
         });
@@ -46,14 +45,7 @@ class EncaissementController extends Controller
             $immeuble->totalEncaissement = $totalEncaissement;
         });
 
-=======
-        // // Charger les locations pour chaque maison de chaque immeuble
-        $immeubles->each(function ($immeuble) {
-            $immeuble->maisons->load('location.Encaissement');
-        });
-
-        // dd($immeubles);
->>>>>>> 4350dc4dd4d50f733b0bd84e2d2367820afba2e0
+    
         return view('pages.encaissements.etat_general', compact('immeubles'));
     }
 
