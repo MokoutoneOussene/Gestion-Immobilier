@@ -56,8 +56,9 @@
                                                             <div class="mb-3">
                                                                 <label>Code location & nom locataire</label>
                                                                 <select name="locations_id"
-                                                                    class="form-control locaraireList js-example-basic-single"
-                                                                    id="locationSelect" required>
+                                                                    class="form-control locaraireList"
+                                                                    required>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-lg-4 col-md-12">

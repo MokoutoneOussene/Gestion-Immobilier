@@ -11,6 +11,10 @@
 	#datatablesSimple_filter, #datatablesSimple_info, #datatablesSimple_paginate {
 		display: none;
 	}
+	#datatablesSimple1_filter, #datatablesSimple1_info, #datatablesSimple1_paginate {
+		display: none;
+	}
+	
 </style>
 
 <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
@@ -24,3 +28,4 @@
 <script src="{{ asset('js/jquery-3.5.1.js') }}"></script>
 
 @notifyCss
+

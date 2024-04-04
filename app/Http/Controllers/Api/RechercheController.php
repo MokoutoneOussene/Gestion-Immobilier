@@ -28,6 +28,5 @@ class RechercheController extends Controller
             'items' => $items,
             'total_count' => $count,
         ]);
-        
     }
 }

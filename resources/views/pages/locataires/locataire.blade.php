@@ -36,7 +36,7 @@
                 <!-- Tabbed dashboard card example-->
                 <div class="card mb-4">
                     <div class="card-body">
-                        <table id="datatablesSimple">
+                        <table id="datatablesSimple1">
                             <thead>
                                 <tr>
                                     <th class="text-center">Code</th>
